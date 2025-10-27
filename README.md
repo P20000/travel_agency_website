@@ -54,15 +54,10 @@ The platform will include the following core features to ensure a robust and com
 
 ```
 travel-agency-website/
-├── src/
-│   ├── components/       # Reusable UI elements
-│   ├── pages/            # Main views (Home, Search, Booking, Dashboard)
-│   ├── api/              # API interaction layer
-│   └── styles/           # CSS/SASS files
-├── public/               # Static assets (images, favicon)
-├── docs/                 # Design, wireframes, and business logic
-├── package.json
-└── README.md             # This file
+├── frontend/       # e.g., React/Vue app
+├── backend/        # e.g., Node.js/Python API
+└── .github/        # This is where your workflows will live
+    └── workflows/  # Folder for all your YAML files
 ```
 
 -----
