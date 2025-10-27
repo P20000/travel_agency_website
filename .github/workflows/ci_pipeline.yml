@@ -1,0 +1,56 @@
+name: Continuous Integration (CI)
+
+on:
+  push:
+    branches: [ main, develop ] # Triggers on push to main or develop
+  pull_request:
+    branches: [ main, develop ] # Triggers on pull requests
+
+jobs:
+  # ------------------------------------
+  # 1. Backend Service Build & Test
+  # ------------------------------------
+  backend_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use your required Node version
+
+      - name: Install backend dependencies
+        run: npm install
+        working-directory: ./backend # Important: run commands in the correct directory
+
+      - name: Run backend tests
+        run: npm test
+        working-directory: ./backend
+
+  # ------------------------------------
+  # 2. Frontend App Build & Test
+  # ------------------------------------
+  frontend_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install frontend dependencies
+        run: npm install
+        working-directory: ./frontend
+
+      - name: Run frontend tests
+        run: npm run test:ci # Ensure you have a non-interactive test script
+        working-directory: ./frontend
+
+      - name: Build frontend production assets
+        run: npm run build
+        working-directory: ./frontend

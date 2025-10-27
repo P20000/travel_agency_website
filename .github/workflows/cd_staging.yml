@@ -1,0 +1,70 @@
+name: 🚀 CD - Deploy to STAGING
+
+on:
+  push:
+    branches:
+      - develop # Only triggers when code is pushed to the 'develop' branch
+
+jobs:
+  # ------------------------------------
+  # 1. Dependency Check (A 'fake' CI step)
+  #    - IMPORTANT: In a real project, this job must depend on successful 
+  #      dedicated CI jobs (backend_ci and frontend_ci) before running.
+  # ------------------------------------
+  check_ci_status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dummy Check for CI Success
+        run: echo "Assuming prior CI/Test steps passed."
+        # In a real scenario, you'd use 'needs: [backend_ci, frontend_ci]' here
+        # and this step would simply run if they passed.
+
+  # ------------------------------------
+  # 2. Deploy Backend API to Render (Staging)
+  # ------------------------------------
+  deploy_backend_render:
+    runs-on: ubuntu-latest
+    needs: check_ci_status # Wait for checks to pass
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy Backend to Render Staging
+        # This action triggers a redeploy on the Render service ID
+        # Render then pulls the latest 'develop' branch code from GitHub and builds it.
+        uses: JorgeLNJunior/render-deploy@v1.4.6
+        with:
+          service_id: ${{ secrets.RENDER_SERVICE_ID_STAGING }}
+          api_key: ${{ secrets.RENDER_API_KEY }}
+          # The wait_deploy option makes the workflow wait for the Render deployment to complete
+          wait_deploy: true 
+          deployment_environment: 'staging'
+          github_deployment: true
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Built-in GitHub secret
+
+  # ------------------------------------
+  # 3. Deploy Frontend App to Vercel (Staging)
+  # ------------------------------------
+  deploy_frontend_vercel:
+    runs-on: ubuntu-latest
+    needs: deploy_backend_render # Ensures backend is up before frontend deployment completes
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Build Frontend for Staging
+        # Note: If your frontend needs to know the staging API URL,
+        # you must pass it here as an environment variable (e.g., REACT_APP_API_URL)
+        run: npm run build
+        working-directory: ./frontend 
+
+      - name: Deploy Frontend to Vercel Staging
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_STAGING }}
+          # Set the Vercel scope to your specific 'frontend' subdirectory
+          VERCEL_PROJECT_SCOPE: frontend
