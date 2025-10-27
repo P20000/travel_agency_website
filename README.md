@@ -77,5 +77,5 @@ We welcome contributions\! Please review the **CONTRIBUTING.md** file (to be cre
 
 For questions or inquiries about this project, please contact:
 
-  * [Your Name/Team Name]
-  * [Contact Email Address]
+  * team memebers : `pranav dwivedi`, `neha sharma`, `sarthak pahwa`, `ayush gupta` 
+
