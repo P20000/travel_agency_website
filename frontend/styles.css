@@ -43,25 +43,33 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    height: 70px;
+    height: 150px;
     width: 100%;
-    background-color: var(--nav-color);
+    background-color: purple;
     z-index: 100;
+    
 }
+
 body.dark nav{
     border: 1px solid #393838;
 }
+
 nav .nav-bar{
     position: relative;
     height: 100%;
-    max-width: 1000px;
+    max-width: 100%;
     width: 100%;
-    background-color: var(--nav-color);
+    background-color: rgb(123, 105, 228);
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 12px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-height: 9000px;
+    padding-left: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 nav .nav-bar .sidebarOpen{
     color: var(--text-color);
@@ -75,13 +83,23 @@ nav .nav-bar .logo a{
     font-weight: 500;
     color: var(--text-color);
     text-decoration: none;
+    display: flex;
+    margin-left: 15px;
+    justify-content: flex-start;
+    
+    
+    
 }
 .menu .logo-toggle{
     display: none;
+    text-align: left;
+    
 }
 .nav-bar .nav-links{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    list-style: none;
+    gap: 30px;
 }
 .nav-bar .nav-links li{
     margin: 0 5px;
@@ -89,12 +107,23 @@ nav .nav-bar .logo a{
 }
 .nav-links li a{
     position: relative;
-    font-size: 17px;
+    font-size: 25px;
     font-weight: 400;
     color: var(--text-color);
     text-decoration: none;
     padding: 10px;
 }
+
+.nav-links li:hover {
+  background-color: white; /* only this box turns white */
+  transform: translateY(-2px);
+  border-radius: 20px;
+}
+
+.nav-links li:hover a {
+  color: black; /* text turns black on hover */
+}
+
 .nav-links li a::before{
     content: '';
     position: absolute;
@@ -266,6 +295,7 @@ body.dark .search-field i{
     max-width: 1400px; /* Adjust as needed */
     position: relative;
     padding: 20px 0;
+    overflow: visible;
 }
 
 .section-title {
@@ -369,8 +399,8 @@ body.dark .search-field i{
 }
 
 .card-duration {
-    background-color: #28a745; /* Green background */
-    color: white;
+    background-color: #ffffff; /* Green background */
+    color: rgb(0, 0, 0);
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.85em;
@@ -398,8 +428,8 @@ body.dark .search-field i{
 }
 
 .view-itinerary-btn {
-    background-color: #007bff; /* Blue button */
-    color: white;
+    background-color: white; /* Blue button */
+    color: black;
     border: none;
     padding: 12px 0;
     border-radius: 8px;
@@ -412,21 +442,29 @@ body.dark .search-field i{
 
 .view-itinerary-btn:hover {
     background-color: #0056b3;
+    color:white;
 }
 
 /* Scroll Arrows */
 .scroll-arrows {
     position: absolute;
     top: 50%;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
     pointer-events: none; /* Allow clicks to pass through to cards if not on button */
     padding: 0 10px;
+    
+    /*gap: 10px;
+    overflow-x: visible;*/
+    z-index: 10;
 }
 
 .scroll-arrow {
+    position: absolute;
+    top: 50%;
     background-color: rgba(255, 255, 255, 0.7);
     border: none;
     border-radius: 50%;
@@ -439,6 +477,7 @@ body.dark .search-field i{
     transition: background-color 0.3s ease, color 0.3s ease;
     z-index: 10;
     pointer-events: all; /* Make buttons clickable */
+    will-change: transform;
 }
 
 .scroll-arrow:hover {
@@ -447,11 +486,11 @@ body.dark .search-field i{
 }
 
 .scroll-arrow.left {
-    left: -25px; /* Adjust position outside the grid */
+    left: 5px; /* Adjust position outside the grid */
 }
 
 .scroll-arrow.right {
-    right: -25px; /* Adjust position outside the grid */
+    right: 5px; /* Adjust position outside the grid */
 }
 
 /* Responsive adjustments */
@@ -488,4 +527,167 @@ body.dark .search-field i{
     .section-title {
         font-size: 1.8em;
     }
+}
+
+/* ===== Auth Buttons Positioned to Right ===== */
+.darkLight-searchBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 👈 push everything (including buttons) to the right */
+    gap: 15px;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    padding: 10px 0;
+    width: 130px; /* equal width */
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Login Button */
+.login-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+/* Signup Button */
+.signup-btn {
+    background-color: #ff9800;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Hover Effects */
+.login-btn:hover {
+    background-color: var(--text-color);
+    color: var(--nav-color);
+}
+
+.signup-btn:hover {
+    background-color: #e68900;
+}
+/*.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 30px;
+  background-color: var(--nav-color);
+  border-bottom: 2px solid #007bff;
+}*/
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-left: 30px;
+}
+
+.search-bar {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 220px;
+}
+
+.search-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.auth-combined {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* push to right */
+  margin-top: 0; /* space below catalog */
+  padding-right: 0;
+}
+
+.login-signup-btn {
+  background-color: #ffcc00; /* yellow */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+.login-signup-btn:hover {
+  background-color: #e6b800;
+  transform: translateY(-2px);
+}
+
+
+
+
+.nav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  width: 230px;
+  padding: 8px 40px 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.9em;
+}
+
+.search-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-btn i {
+  font-size: 1.2em;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.search-btn:hover i {
+  color: black;
 }
