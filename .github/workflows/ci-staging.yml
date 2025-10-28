@@ -1,0 +1,55 @@
+name: CI & Staging Deployment
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  # Job 1: Continuous Integration (Testing and Linting)
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js (assuming JS for testing)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Example CI Step: Check code quality and run tests
+      - name: Run CI Checks
+        run: |
+          echo "Running build/test commands..."
+          # Replace with your actual commands, e.g., 'npm install', 'npm test', 'npm run lint'
+          # For a static site, you might just ensure all files exist or run linting.
+          # Example: npm install
+          # Example: npm run test 
+
+      - name: Store CI Status
+        run: echo "CI_SUCCESS=true" >> $GITHUB_ENV # Set environment variable for the next job
+
+  # Job 2: Deploy to Staging Environment (Depends on CI success)
+  deploy-staging:
+    needs: ci
+    if: success() # Only run if the 'ci' job succeeded
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy to STAGING S3 Bucket
+        # Deploy to a separate S3 bucket designated for staging (e.g., travel-agency-staging-site)
+        run: aws s3 sync . s3://<YOUR-STAGING-S3-BUCKET-NAME> --exclude ".git/*" --delete
+        
+      - name: Invalidate STAGING CloudFront Cache
+        # Use a separate CloudFront ID for staging
+        run: aws cloudfront create-invalidation --distribution-id <YOUR-STAGING-CLOUDFRONT-ID> --paths "/*"
