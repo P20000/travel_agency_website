@@ -1,0 +1,28 @@
+Daily Development and Infrastructure Log
+Date: 2025-10-28 (Tuesday)
+Project: Initial Web App Setup (Frontend & CI/CD)
+[09:00 - 12:30] Frontend Code & Project Initialization
+Task: Create and structure the main frontend project files.
+09:00 - 09:45 | Directory Structure: Initialized the project directory (/web-app/) and created core subdirectories (/src, /infra, /ci-cd).
+09:45 - 11:30 | Frontend Code Draft:
+Created index.html in /src: Basic HTML5 boilerplate, linked to the external CSS and JavaScript files. Included a simple navigation bar and main content area.
+Created styles.css in /src: Defined basic layout using Flexbox, set up color variables, and implemented initial mobile-first styling for responsiveness.
+Created script.js in /src: Added a placeholder function for future API calls and a simple DOM manipulation listener (e.g., a dark/light mode toggle).
+11:30 - 12:30 | CI/CD Architecture Scaffolding:
+Created skeleton YAML files in /ci-cd/ to define the future pipeline structure (non-functional placeholders).
+ci_pipeline.yml: Defined stages for Linting, Testing, and Building the static assets.
+cd_pipeline.yml: Defined stages for Deployment to Staging and Deployment to Production (pending successful tests).
+[13:30 - 17:00] Infrastructure and Jenkins Setup (DevOps)
+Task: Provision an EC2 instance and install Jenkins for continuous integration.
+13:30 - 14:15 | EC2 Provisioning:
+Launched a new Amazon Linux 2 EC2 instance (t2.medium) in the designated VPC subnet.
+Configured Security Group to allow inbound traffic on SSH (Port 22), HTTP (Port 80), and Jenkins (Port 8080).
+14:15 - 15:30 | Java & Dependencies:
+SSHed into the instance.
+Updated the system packages: sudo yum update -y.
+Installed Java Development Kit (JDK 11), as required by the Jenkins version: sudo yum install java-11-amazon-corretto -y.
+15:30 - 16:45 | Jenkins Installation:
+Imported the Jenkins GPG key and added the Jenkins repository to the system sources.
+Installed Jenkins using sudo yum install jenkins.
+Started the Jenkins service: sudo systemctl start jenkins.
+Ensured Jenkins is set to run on boot: sudo systemctl enable jenkins.
