@@ -97,6 +97,8 @@ const travelDestinations = [
     // Add more destinations as needed
 ];
 
+
+
 function createTravelCard(destination) {
     const card = `
         <div class="travel-card">
