@@ -5,9 +5,10 @@ body {
     margin: 0;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 
 /* ===== Google Font Import - Poppins ===== */
@@ -704,4 +705,51 @@ body.dark .search-field i{
 
 .search-btn:hover i {
   color: black;
+}
+
+
+.more-options-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto 0 auto; /* spacing below Travel Destinations */
+  text-align: center;
+  background-color: #f5f0ff; /* light purple tint */
+  border-radius: 30px;
+  padding: 40px 20px;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.more-options-section .section-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.more-options-container {
+  display: flex;              /* 👈 horizontal alignment */
+  justify-content: center;    /* centers all cards */
+  gap: 30px;                  /* space between cards */
+  flex-wrap: wrap;            /* wraps if screen is small */
+}
+
+.option-card {
+  background: white;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.option-card:hover {
+  transform: scale(1.05);
+}
+
+.option-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
