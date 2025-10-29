@@ -93,8 +93,92 @@ const travelDestinations = [
         image: 'https://www.tripsavvy.com/thmb/-AzEW7DpVfnzFwXRy0LISt5RH8c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1432005421-5c0bc8d84cedfd0001fa5acb.jpg',
         location: 'SRINAGAR',
         bestTime: 'BEST TIME : MAY, JUN, SEP'
-    }
+    },
+    
     // Add more destinations as needed
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const moreOptionsWrapper = document.getElementById('moreOptionsWrapper');
+  const scrollLeftMore = document.getElementById('scrollLeftMore');
+  const scrollRightMore = document.getElementById('scrollRightMore');
+
+  if (moreOptionsWrapper) {
+    let allMoreCardsHTML = '';
+    moreOptions.forEach(option => {
+      allMoreCardsHTML += createTravelCard(option);
+    });
+    moreOptionsWrapper.innerHTML = allMoreCardsHTML;
+
+    const scrollAmount = 310;
+    scrollLeftMore.addEventListener('click', () => {
+      moreOptionsWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    scrollRightMore.addEventListener('click', () => {
+      moreOptionsWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
+});
+
+
+
+const moreOptions=[
+    {
+        id: 'switzerland;',
+        title: 'SCENIC SWITZERLAND WITH INTERLAKEN',
+        duration: '9D/8N',
+        image: 'https://t3.ftcdn.net/jpg/01/87/13/30/360_F_187133059_6wFe0lGVs9M6chzO4Af5jpx8fMRvw3us.jpg',
+        location: 'INTERLAKEN',
+        bestTime: 'BEST TIME : JUNE, JULY, AUGUST'
+    },
+    {
+        id: 'prague',
+        title: 'CHARMING PRAGUE WITH OLD TOWN MAGIC',
+        duration: '6D/7N',
+        image: 'https://thenextcrossing.com/wp-content/uploads/2020/06/Czech-Republic-0671-Pano.jpg',
+        location: 'TOWN_MAGIC',
+        bestTime: 'BEST TIME : APRIL,MAY,JUNE'
+    },
+    {
+        id: 'milan',
+        title: 'MODERN MILAN WITH ITALIAN ELEGANCE',
+        duration: '6D/7N',
+        image: 'https://3daysinmilan.com/wp-content/uploads/2020/10/Corso_Como_skyline.jpg',
+        location: 'CORSO_COMO',
+        bestTime: 'BEST TIME : SEPTEMBER, OCTOBER'
+    },
+    {
+        id: 'mirituese',
+        title: 'MARVELOUS MATURITIES WITH CORAL DREAMS',
+        duration: '7D/6N',
+        image: 'https://mauritiusattractions.com/content/images/gallery/193/glass-bottom-boat-blue-marine-park%20(3).jpg',
+        location: 'BLUE_BAY',
+        bestTime: 'BEST TIME : OCTOBER, NOVEMBER, DECEMBER'
+    },
+    {
+        id: 'austria',
+        title: 'ARTISTIC AUSTRIA WITH ALPINE WONDERS',
+        duration: '2D/3N',
+        image: 'https://thetourguy.com/wp-content/uploads/2023/01/TTTD-Vienna-feature-1440-675.jpg',
+        location: 'VIENNA',
+        bestTime: 'BEST TIME : NOVEMBER, DECEMBER'
+    },
+    {
+        id: 'maldives',
+        title: 'MAGICAL MALDIVES WITH SUN-KISSED PARADISE',
+        duration: '3D/2N',
+        image: 'https://cdn.mahlatini.com/_2400x1350_crop_center-center_none/Lux-South-Ari-Atoll-Hero-Image.png',
+        location: 'ARI ATOLL',
+        bestTime: 'BEST TIME : MAY, JUNE, JULY'
+    },
+    {
+        id: 'finland',
+        title: 'FROZEN FINLAND WITH NORTHEN LIGHT GLOW',
+        duration: '6D/7N',
+        image: 'https://apukkaresort.fi/wp-content/uploads/2024/04/sauna-carriage-on-skis-apukka-resort-rovaniemi-lapland-finland.jpg',
+        location: 'LAPLAND',
+        bestTime: 'BEST TIME : DECEMBER, JANUARY'
+    }
 ];
 
 function createTravelCard(destination) {
@@ -164,4 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error("Travel cards wrapper not found!");
     }
+    
+
+  
 });

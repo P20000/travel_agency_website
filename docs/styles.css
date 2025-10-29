@@ -6,8 +6,13 @@ body {
     padding: 20px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    overflow-y: auto;
+}
+main {
+    margin-top: 80px;
 }
 
 .service-card {
@@ -335,9 +340,14 @@ body.dark .search-field i{
     width: 100%;
     max-width: 1400px; /* Adjust as needed */
     position: relative;
+    margin-top: 250px;
     padding: 20px 40px;
     overflow: visible;
+<<<<<<< HEAD
     background-color: rgb(205 188 255);
+=======
+    background-color: #e8ccff;
+>>>>>>> 1823b0d51abcfb3f89e5a889af643bb38423ee97
     border-radius: 50px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -736,4 +746,94 @@ body.dark .search-field i{
 
 .search-btn:hover i {
   color: black;
+}
+
+
+.more-options-section {
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 250px;
+  margin: 60px auto 0 auto; /* spacing below Travel Destinations */
+  text-align: center;
+  background-color: #e8ccff; /* light purple tint */
+  border-radius: 50px;
+  padding: 20px 40px;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+  font-size: 20px;
+}
+
+.more-options-section .section-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.more-options-container {
+  display: flex;              /* 👈 horizontal alignment */
+  justify-content: center;    /* centers all cards */
+  gap: 30px;                  /* space between cards */
+  flex-wrap: wrap;            /* wraps if screen is small */
+}
+
+.option-card {
+  background: white;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.option-card:hover {
+  transform: scale(1.05);
+}
+
+.option-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+#moreOptionsWrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Ensure arrows stay inside container */
+#scrollLeftMore, 
+#scrollRightMore {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: rgb(8, 8, 8);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+  background-color: white;
+}
+
+/* Left and right placement */
+#scrollLeftMore {
+  left: 10px;
+}
+#scrollRightMore {
+  right: 10px;
+}
+
+body, html {
+  height: auto;
+  overflow-y: auto;
 }
