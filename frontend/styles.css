@@ -107,18 +107,21 @@ nav .nav-bar .logo a{
 }
 .nav-links li a{
     position: relative;
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 400;
     color: var(--text-color);
     text-decoration: none;
-    padding: 10px;
+    padding: 30px;
+    
 }
 
 .nav-links li:hover {
   background-color: white; /* only this box turns white */
-  transform: translateY(-2px);
+  transform: translateY(0px);
   border-radius: 20px;
-}
+   
+  
+} 
 
 .nav-links li:hover a {
   color: black; /* text turns black on hover */
@@ -604,6 +607,8 @@ body.dark .search-field i{
   justify-content: center;
   gap: 8px;
   margin-left: 30px;
+  margin-bottom: 30px;
+  
 }
 
 .search-bar {
@@ -633,16 +638,16 @@ body.dark .search-field i{
   width: 100%;
   display: flex;
   justify-content: flex-end; /* push to right */
-  margin-top: 0; /* space below catalog */
-  padding-right: 0;
+  margin-top: 20px; /* space below catalog */
+  padding-right: 20px;
 }
 
 .login-signup-btn {
-  background-color: #ffcc00; /* yellow */
+  background: linear-gradient(135deg, #e6c41e, #f5e662); /* yellow */
   color: white;
   border: none;
-  border-radius: 10px;
-  padding: 10px 25px;
+  border-radius: 50px;
+  padding: 10px 30px;
   font-size: 1em;
   font-weight: 600;
   cursor: pointer;
