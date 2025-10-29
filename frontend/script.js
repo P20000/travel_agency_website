@@ -248,4 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error("Travel cards wrapper not found!");
     }
+    
+
+  
 });

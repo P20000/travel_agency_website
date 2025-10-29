@@ -5,10 +5,14 @@ body {
     margin: 0;
     padding: 20px;
     display: flex;
-    /*justify-content: center;*/
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    /*min-height: 100vh;*/
+    min-height: 100vh;
+    overflow-y: auto;
+}
+main {
+    margin-top: 80px;
 }
 
 /* ===== Google Font Import - Poppins ===== */
@@ -304,6 +308,7 @@ body.dark .search-field i{
     width: 100%;
     max-width: 1400px; /* Adjust as needed */
     position: relative;
+    margin-top: 250px;
     padding: 20px 40px;
     overflow: visible;
     background-color: rgb(236, 223, 223);
@@ -711,12 +716,16 @@ body.dark .search-field i{
 .more-options-section {
   width: 100%;
   max-width: 1200px;
+  margin-top: 60px;
   margin: 60px auto 0 auto; /* spacing below Travel Destinations */
   text-align: center;
   background-color: #f5f0ff; /* light purple tint */
-  border-radius: 30px;
-  padding: 40px 20px;
+  border-radius: 50px;
+  padding: 20px;
   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .more-options-section .section-title {
@@ -752,4 +761,41 @@ body.dark .search-field i{
   border-radius: 20px;
   object-fit: cover;
   margin-bottom: 15px;
+}
+
+#moreOptionsWrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Ensure arrows stay inside container */
+#scrollLeftMore, 
+#scrollRightMore {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Left and right placement */
+#scrollLeftMore {
+  left: 10px;
+}
+#scrollRightMore {
+  right: 10px;
+}
+
+body, html {
+  height: auto;
+  overflow-y: auto;
 }
