@@ -48,8 +48,8 @@ jobs:
 
       - name: Deploy to STAGING S3 Bucket
         # Deploy to a separate S3 bucket designated for staging (e.g., travel-agency-staging-site)
-        run: aws s3 sync . s3://<YOUR-STAGING-S3-BUCKET-NAME> --exclude ".git/*" --delete
+        run: aws s3 sync ./frontend s3://travel-agency-staging-site --exclude ".git/*" --delete
         
       - name: Invalidate STAGING CloudFront Cache
         # Use a separate CloudFront ID for staging
-        run: aws cloudfront create-invalidation --distribution-id <YOUR-STAGING-CLOUDFRONT-ID> --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id E3MBQN405XRQ5S --paths "/*"

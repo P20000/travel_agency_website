@@ -25,4 +25,4 @@ jobs:
         
       - name: Invalidate PRODUCTION CloudFront Cache
         # Use the CloudFront ID for your live production site
-        run: aws cloudfront create-invalidation --distribution-id <YOUR-PRODUCTION-CLOUDFRONT-ID> --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id E3MBQN405XRQ5S --paths "/*"
