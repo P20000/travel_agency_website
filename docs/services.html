@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sliding Service Cards</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #f4f5fa;
+      color: #333;
+    }
+
+    /* ---------- Navbar (keep your style) ---------- */
+    nav {
+      background: rgb(123, 105, 228);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: black;
+      background: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+    }
+
+    /* ---------- Service Section ---------- */
+    .service-section {
+      margin-top: 80px;
+      padding: 40px 60px;
+      background-color: white;
+    }
+
+    .service-section h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    /* Wrapper for horizontal scroll */
+    .service-slider {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 20px;
+      scrollbar-width: none;
+    }
+
+    .service-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Each Card */
+    .service-card {
+      flex: 0 0 350px;
+      background: #dce6ea;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .service-img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .service-info h2 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .service-info p {
+      font-size: 0.95em;
+      color: #444;
+    }
+
+    /* Arrows */
+    .arrow {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5em;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    .arrow:hover {
+      background-color: #4070f4;
+      color: white;
+    }
+
+    .left-arrow {
+      left: 20px;
+    }
+
+    .right-arrow {
+      right: 20px;
+    }
+
+    .slider-container {
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .service-card {
+        flex: 0 0 280px;
+      }
+      .arrow {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Service Section -->
+  <section class="service-section">
+    <h1>Our Services</h1>
+
+    <div class="slider-container">
+      <button class="arrow left-arrow" id="leftArrow">&#10094;</button>
+
+      <div class="service-slider" id="serviceSlider">
+        <div class="service-card">
+          <img src="./../assets/service page assets/car_services.png" alt="Taxi Service" class="service-img" />
+          <div class="service-info">
+            <h2>Taxi Service</h2>
+            <p>
+              Comfortable rides anytime, anywhere. Reliable, safe, and affordable.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="./../assets/service page assets/hotel_services.png" alt="Hotel Booking" class="service-img" />
+          <div class="service-info">
+            <h2>Hotel Booking</h2>
+            <p>
+              Book top-rated hotels and enjoy a luxurious stay wherever you travel.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="./../assets/service page assets/spa_services.png" alt="Spa Service" class="service-img" />
+          <div class="service-info">
+            <h2>Spa & Relaxation</h2>
+            <p>
+              Relax with world-class spa treatments and rejuvenate your body and mind.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="./../assets/service page assets/gym_services.png" alt="Fitness" class="service-img" />
+          <div class="service-info">
+            <h2>Fitness & Gym</h2>
+            <p>
+              Modern equipment and expert trainers to keep you in perfect shape.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow right-arrow" id="rightArrow">&#10095;</button>
+    </div>
+  </section>
+
+  <script>
+    const slider = document.getElementById("serviceSlider");
+    const leftArrow = document.getElementById("leftArrow");
+    const rightArrow = document.getElementById("rightArrow");
+
+    rightArrow.addEventListener("click", () => {
+      slider.scrollBy({ left: 400, behavior: "smooth" });
+    });
+
+    leftArrow.addEventListener("click", () => {
+      slider.scrollBy({ left: -400, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
