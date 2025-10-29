@@ -1,0 +1,1340 @@
+/* --- Custom Fonts & Global Overrides (Minimal) --- */
+/* Basic Reset & Body Styling */
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: rgb(123, 105, 228); /* Purple accent */
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+    /* Custom Theme Colors for Modal/Accent */
+    --accent-teal: #00A896; /* For itinerary button/roadmap */
+    --accent-orange: #FF6700; /* For price highlight */
+    --accent-yellow: #f5e662; /* For Login/Signup button */
+    --accent-green: #28a745; /* For Buy button */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+main {
+    margin-top: 80px;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  background-color: #dce6ea;
+  border-radius: 30px;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-img {
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.service-info h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.service-info p {
+  font-size: 1em;
+  color: #333;
+  max-width: 600px;
+}
+
+
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+}
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+body{
+    height: 100vh;
+    background-color: white;
+}
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background-color: purple;
+    z-index: 100;
+    
+}
+
+body.dark nav{
+    border: 1px solid #393838;
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    background-color: rgb(123, 105, 228);
+    margin: 0 auto;
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 9000px;
+    padding-left: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+nav .nav-bar .logo a{
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    margin-left: 15px;
+    justify-content: flex-start;
+    
+    
+    
+}
+
+nav .nav-bar .logo a img {
+    height: 100px;   /* decrease height */
+    width: auto;    /* maintain aspect ratio */
+}
+
+.menu .logo-toggle{
+    display: none;
+    text-align: left;
+    
+}
+.nav-bar .nav-links{
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+    gap: 30px;
+}
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+.nav-links li a{
+    position: relative;
+    font-size: 27px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 30px;
+    
+}
+
+.nav-links li:hover {
+  background-color: white; /* only this box turns white */
+  transform: translateY(0px);
+  border-radius: 20px;
+   
+  
+} 
+
+.nav-links li:hover a {
+  color: black; /* text turns black on hover */
+}
+
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchBox{
+    position: relative;
+}
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
+}
+body.dark .search-field input{
+    color: var(--text-color);
+}
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+body.dark .search-field i{
+    color: var(--text-color);
+}
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+    nav.active .menu{
+        left: -0%;
+    }
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+/* Section Container */
+.travel-cards-section {
+    width: 100%;
+    max-width: 1400px; /* Adjust as needed */
+    position: relative;
+    margin-top: 250px;
+    padding: 20px 40px;
+    overflow: visible;
+    background: linear-gradient(135deg, #ecd9ff, #9571ff);
+    /* background-color: rgb(205 188 255); */
+    
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.section-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+
+}
+
+
+/* Cards Wrapper (Horizontal Scroll Container) */
+.cards-wrapper {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-behavior: smooth; /* Smooth scroll when buttons are clicked */
+    padding-bottom: 20px; /* Space for scrollbar */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+.cards-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Travel Card */
+.travel-card {
+    flex: 0 0 280px; /* Fixed width for each card, prevent shrinking */
+    height: 400px; /* Fixed height for visual consistency */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-right: 25px; /* Space between cards */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.travel-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.travel-card:last-child {
+    margin-right: 0; /* No margin on the last card */
+}
+
+/* Image and Overlay */
+.card-image-container {
+    width: 100%;
+    height: 100%; /* Image takes full card height */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, crop if necessary */
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
+    z-index: 2;
+}
+
+/* Content within the Card */
+.card-content {
+    position: relative;
+    z-index: 3; /* Ensure content is above overlay */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Occupy full card height */
+    color: #fff; /* Default text color */
+}
+.card-top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 100px; /* Push main title down */
+}
+.card-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    flex-grow: 1; /* Allow title to take space */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.card-duration {
+    background-color: #ffffff; /* Green background */
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent duration from wrapping */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.card-bottom-info {
+    margin-top: auto; /* Push to the bottom */
+}
+.card-location {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.card-best-time {
+    font-size: 0.85em;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.view-itinerary-btn {
+    background-color: white; /* Blue button */
+    color: black;
+    border: none;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width of content area */
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
+}
+.view-itinerary-btn:hover {
+    background-color: #0056b3;
+    color:white;
+}
+
+/* Scroll Arrows */
+.scroll-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none; /* Allow clicks to pass through to cards if not on button */
+    padding: 0 10px;
+    
+    /*gap: 10px;
+    overflow-x: visible;*/
+    z-index: 10;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 10;
+    pointer-events: all; /* Make buttons clickable */
+    will-change: transform;
+}
+
+.scroll-arrow:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+.scroll-arrow.left {
+    left: 5px; /* Adjust position outside the grid */
+}
+
+.scroll-arrow.right {
+    right: 5px; /* Adjust position outside the grid */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .travel-card {
+        flex: 0 0 250px;
+        margin-right: 20px;
+    }
+    .card-title {
+        font-size: 1.2em;
+    }
+    .scroll-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 480px) {
+    .travel-cards-section {
+        padding: 0;
+    }
+    .cards-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .travel-card {
+        flex: 0 0 90%; /* Take up more width on small screens */
+        margin-right: 15px;
+    }
+    .scroll-arrows {
+        display: none; /* Hide arrows on very small screens, rely on touch scroll */
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+}
+
+/* ===== Auth Buttons Positioned to Right ===== */
+.darkLight-searchBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 👈 push everything (including buttons) to the right */
+    gap: 15px;
+}
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.auth-buttons button {
+    padding: 10px 0;
+    width: 130px; /* equal width */
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Login Button */
+.login-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+/* Signup Button */
+.signup-btn {
+    background-color: #ff9800;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Hover Effects */
+.login-btn:hover {
+    background-color: var(--text-color);
+    color: var(--nav-color);
+}
+
+.signup-btn:hover {
+    background-color: #e68900;
+}
+/*.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 30px;
+  background-color: var(--nav-color);
+  border-bottom: 2px solid #007bff;
+}*/
+
+nav{ 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 150px; 
+    width: 100%; 
+    background-color: var(--nav-color); 
+    z-index: 1000; 
+}
+body.dark nav{ 
+    border: 1px solid #393838; 
+}
+
+nav .nav-bar{
+    position: relative; 
+    height: 100%; 
+    max-width: 100%; 
+    width: 100%; 
+    background-color: var(--nav-color); 
+    margin: 0 auto; 
+    padding: 12px 40px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding-left: 0;
+}
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color); 
+    font-size: 25px; 
+    padding: 5px; 
+    cursor: pointer; 
+    display: none;
+}
+nav .nav-bar .logo a{
+    font-size: 10px; 
+    font-weight: 500; 
+    color: var(--text-color); 
+    text-decoration: none; 
+    display: flex; 
+    margin-left: 15px; 
+    justify-content: flex-start;
+}
+nav .nav-bar .logo a img { 
+    height: 100px; 
+    width: auto; 
+}
+.menu .logo-toggle{ 
+    display: none; 
+    text-align: left; 
+}
+.nav-bar .nav-links{ 
+    display: flex; 
+    align-items: flex-end; 
+    list-style: none; 
+    gap: 30px; 
+}
+.nav-bar .nav-links li{ 
+    margin: 0 5px; 
+    list-style: none; 
+}
+.nav-links li a{
+    position: relative; 
+    font-size: 27px; 
+    font-weight: 400; 
+    color: var(--text-color); 
+    text-decoration: none; 
+    padding: 30px;
+}
+.nav-links li:hover { 
+    background-color: white; 
+    transform: translateY(0px); 
+    border-radius: 20px; } 
+.nav-links li:hover a { color: black; }
+.nav-links li a::before{
+    content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); height: 6px; width: 6px; border-radius: 50%; background-color: var(--text-color); opacity: 0; transition: all 0.3s ease;
+}
+.nav-links li:hover a::before{ opacity: 1; }
+.nav-bar .darkLight-searchBox{ display: flex; align-items: center; }
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px; width: 40px; display: flex; align-items: center; justify-content: center; margin: 0 5px;
+}
+.dark-light i, .searchToggle i{
+    position: absolute; color: var(--text-color); font-size: 22px; cursor: pointer; transition: all 0.3s ease;
+}
+.dark-light i.sun{ opacity: 0; pointer-events: none; }
+.dark-light.active i.sun{ opacity: 1; pointer-events: auto; }
+.dark-light.active i.moon{ opacity: 0; pointer-events: none; }
+.searchToggle i.cancel{ opacity: 0; pointer-events: none; }
+.searchToggle.active i.cancel{ opacity: 1; pointer-events: auto; }
+.searchToggle.active i.search{ opacity: 0; pointer-events: none; }
+.searchBox{ position: relative; }
+
+/* Simplified search field styling */
+.searchBox .nav-search {
+    position: absolute; bottom: -70px; right: 5px; height: 50px; width: 260px; display: flex; align-items: center; background-color: var(--nav-color); padding: 3px; border-radius: 6px; box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); opacity: 0; pointer-events: none; transition: all 0.3s ease;
+}
+.searchToggle.active ~ .nav-search {
+    bottom: -60px; opacity: 1; pointer-events: auto; background-color: var(--search-bar);
+}
+.nav-search input{
+    height: 100%; width: 100%; padding: 0 45px 0 15px; outline: none; border: none; border-radius: 4px; font-size: 14px; font-weight: 400; color: var(--search-text); background-color: var(--search-bar);
+}
+body.dark .nav-search input{ color: var(--text-color); }
+.nav-search .search-btn{
+    position: absolute; right: 0; background: none; border: none; cursor: pointer; padding: 10px;
+}
+.nav-search .search-btn i{
+    position: static; color: #555; font-size: 22px;
+}
+.searchToggle.active ~ .nav-search .search-btn i {
+    color: var(--nav-color);
+}
+body.dark .searchToggle.active ~ .nav-search .search-btn i {
+    color: var(--text-color);
+}
+
+/* Auth Combined Button */
+.auth-combined { 
+    width: 100%; display: flex; justify-content: flex-end; margin-top: 20px; padding-right: 20px; z-index: 1001;
+}
+.login-signup-btn {
+    background: linear-gradient(135deg, var(--accent-yellow), #f5e662); color: white; border: none; border-radius: 50px; padding: 10px 30px; font-size: 1em; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.login-signup-btn:hover { background-color: #e6b800; transform: translateY(-2px); }
+
+/* Responsive adjustments */
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{ display: block; }
+    .menu{
+        position: fixed; height: 100%; width: 320px; left: -100%; top: 0; padding: 20px; background-color: var(--side-nav); z-index: 100; transition: all 0.4s ease;
+    }
+    nav.active .menu{ left: -0%; }
+    nav.active .nav-bar .navLogo a{ opacity: 0; transition: all 0.3s ease; }
+    .menu .logo-toggle{ display: block; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .logo-toggle .siderbarClose{ color: var(--text-color); font-size: 24px; cursor: pointer; }
+    .nav-bar .nav-links{ flex-direction: column; padding-top: 30px; }
+    .nav-links li a{ display: block; margin-top: 20px; }
+    .darkLight-searchBox { display: none; } 
+    .auth-combined { display: none; }
+}
+.more-options-section {
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 250px;
+  margin: 60px auto 0 auto; /* spacing below Travel Destinations */
+  text-align: center;
+  background-color: #e8ccff; /* light purple tint */
+  border-radius: 50px;
+  padding: 20px 40px;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+  font-size: 20px;
+}
+
+.more-options-section .section-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.more-options-container {
+  display: flex;              /* 👈 horizontal alignment */
+  justify-content: center;    /* centers all cards */
+  gap: 30px;                  /* space between cards */
+  flex-wrap: wrap;            /* wraps if screen is small */
+}
+
+.option-card {
+  background: white;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.option-card:hover {
+  transform: scale(1.05);
+}
+
+.option-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+#moreOptionsWrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Ensure arrows stay inside container */
+#scrollLeftMore, 
+#scrollRightMore {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: rgb(8, 8, 8);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+  background-color: white;
+}
+.card-container-wrapper {
+    position: relative; /* Crucial for positioning arrows relative to the content */
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.cards-wrapper {
+    display: flex;
+    gap: 30px; /* Space between cards */
+    overflow-x: scroll;
+    padding: 10px 0; /* Space for shadow/top/bottom padding */
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.cards-wrapper::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.scroll-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* Allows clicks to pass through to the buttons */
+}
+
+.scroll-arrow {
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    color: #1A202C;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    pointer-events: all; /* Make the buttons clickable */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.scroll-arrow:hover {
+    background-color: #00A896;
+    color: white;
+}
+
+.scroll-arrow.left {
+    margin-left: -20px; /* Pulls the arrow slightly outside the wrapper */
+}
+
+.scroll-arrow.right {
+    margin-right: -20px; /* Pulls the arrow slightly outside the wrapper */
+}
+
+
+/* --- MODAL STYLES (AS PROVIDED IN PREVIOUS RESPONSE) --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 800px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 5%; opacity: 1}
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+#modal-body-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#modal-body-content h3 {
+    font-size: 20px;
+    margin-top: 25px;
+    color: #007bff; 
+}
+
+.roadmap-step {
+    border-left: 3px solid #00A896; /* Using Teal accent */
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.price-box {
+    text-align: right;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.final-price {
+    font-size: 36px;
+    color: #FF6700; /* Using Orange accent for price */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.buy-btn {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #218838;
+}
+
+/* Card specific styles (adjust as needed to match your design) */
+.travel-card {
+    min-width: 280px;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.travel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Ensure card-overlay and buttons are visible/styled */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+}
+.view-itinerary-btn {
+    background-color: #ffffff; 
+    color: rgb(68, 68, 68);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.view-itinerary-btn:hover {
+    background-color: #6e93f7;
+}
+/* Left and right placement */
+#scrollLeftMore {
+  left: 10px;
+}
+#scrollRightMore {
+  right: 10px;
+}
+
+body, html {
+  height: auto;
+  overflow-y: auto;
+}
+
+
+
+
+
+
+
+
+.brand-font {
+    font-family: 'Playfair Display', serif;
+}
+.text-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- 1. Stylish Long Card Layout (Outer Services Page Cards) --- */
+
+.service-card-long {
+    display: flex;
+    flex-direction: row; 
+    align-items: stretch;
+    background-color: #1f2937; 
+    color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    min-height: 250px;
+}
+
+.service-card-long:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-card-image {
+    flex: 2; 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.service-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15); 
+}
+
+.service-card-content {
+    flex: 1.5; 
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Reverse layout for alternating design */
+.service-card-long.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Button Styling (Teal/White) */
+.view-details-btn {
+    background-color: #00A896;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.view-details-btn:hover {
+    background-color: #008f7d;
+    transform: translateY(-1px);
+}
+
+/* --- 2. HIGH QUALITY MODAL & DYNAMIC CARD STYLING --- */
+
+/* Modal Backdrop */
+.modal {
+    display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(12px); 
+}
+
+.modal-content {
+    background-color: #fff; 
+    margin: 5vh auto; 
+    padding: 50px; /* Padding for inner spacing */
+    border-radius: 15px; 
+    width: 95%; 
+    max-width: 950px; 
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8); 
+    position: relative; 
+    animation: animatetop 0.4s;
+    overflow: hidden;
+}
+@keyframes animatetop { from { top: -30vh; opacity: 0; } to { top: 5vh; opacity: 1; } }
+
+.close-btn { 
+    color: #888; 
+    position: absolute; 
+    top: 15px; 
+    right: 25px; 
+    font-size: 36px; 
+    font-weight: 200; 
+    cursor: pointer; 
+    z-index: 10;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.close-btn:hover { 
+    color: #FF6700; 
+    transform: rotate(90deg); 
+}
+
+/* Dynamic Content Header */
+#modal-service-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em; 
+    color: #1f2937; 
+    margin-bottom: 25px;
+    border-bottom: 4px solid #00A896; 
+    padding: 20px;
+    line-height: 1.1;
+    letter-spacing: -0.02em; 
+}
+
+/* List Grid Layout */
+.service-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    margin-top: 30px;
+    padding: 23px;
+}
+
+/* Individual Card Style (Service Details) - VIBRANT STYLING */
+.detail-card {
+    background: #ffffff; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center; 
+    border: 1px solid #e0e0e0; /* Subtle border around card */
+}
+
+.detail-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18); 
+}
+
+/* Header for Name */
+.detail-card .card-header {
+    background-color: #f8f8f8; 
+    padding: 20px 25px; 
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+.detail-card h4 {
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+    color: #1f2937; 
+    font-size: 1.6em; 
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Main content area */
+.detail-card .card-body {
+    padding: 25px; 
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    min-height: 120px; /* Ensure visual consistency */
+}
+
+.detail-card p {
+    font-size: 1em; 
+    color: #555; 
+    margin-bottom: 8px; 
+    line-height: 1.5; 
+}
+
+/* Footer (Matching the colored blocks from the image) */
+.detail-card .card-footer {
+    padding: 15px 10px; 
+    color: white; 
+    font-weight: 600;
+    font-size: 1.1em;
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    /* Ensure the colored footer is solid */
+    border-top: none; 
+}
+
+.card-footer .footer-item {
+    text-align: center;
+    padding: 0 5px;
+    /* Styles for the dynamic value (Price/Score/Status) */
+    font-size: 1.2em; 
+    line-height: 1.1;
+}
+
+.card-footer .footer-label {
+    font-size: 0.7em;
+    font-weight: 400;
+    opacity: 0.9;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Specific footer colors based on service type (MUST match JS generated classes) */
+.detail-card.taxi .card-footer { background-color: #ef4444; } /* RED: Score/Rating */
+.detail-card.hotels .card-footer { background-color: #f97316; } /* ORANGE: Booking Status */
+.detail-card.spa .card-footer { background-color: #22c55e; } /* GREEN: Availability */
+.detail-card.gym .card-footer { background-color: #3b82f6; } /* BLUE: Pass Type */
+
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .service-card-long {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .service-card-long.reverse {
+        flex-direction: column;
+    }
+    .service-card-image {
+        min-height: 200px;
+        flex: auto;
+    }
+    .modal-content {
+        padding: 30px; 
+    }
+    .service-list-grid {
+        grid-template-columns: 1fr;
+        gap: 20px; 
+    }
+    #modal-service-content h2 {
+        font-size: 2.2em; 
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+    }
+    .detail-card {
+        padding: 0; 
+    }
+    .detail-card .card-header {
+        padding: 15px 20px;
+    }
+    .detail-card .card-body {
+        padding: 20px;
+    }
+    .card-footer .footer-label {
+        font-size: 0.6em;
+    }
+}
