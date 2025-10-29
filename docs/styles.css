@@ -15,6 +15,38 @@ main {
     margin-top: 80px;
 }
 
+.service-card {
+  display: flex;
+  align-items: center;
+  background-color: #dce6ea;
+  border-radius: 30px;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-img {
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.service-info h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.service-info p {
+  font-size: 1em;
+  color: #333;
+  max-width: 600px;
+}
+
+
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 *{
