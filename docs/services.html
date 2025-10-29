@@ -1,235 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sliding Service Cards</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background-color: #f4f5fa;
-      color: #333;
-    }
-
-    /* ---------- Navbar (keep your style) ---------- */
-    nav {
-      background: rgb(123, 105, 228);
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 50px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      transition: 0.3s;
-    }
-
-    .nav-links li a:hover {
-      color: black;
-      background: white;
-      padding: 8px 15px;
-      border-radius: 20px;
-    }
-
-    /* ---------- Service Section ---------- */
-    .service-section {
-      margin-top: 80px;
-      padding: 40px 60px;
-      background-color: white;
-    }
-
-    .service-section h1 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 30px;
-      color: #222;
-    }
-
-    /* Wrapper for horizontal scroll */
-    .service-slider {
-      display: flex;
-      gap: 30px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding-bottom: 20px;
-      scrollbar-width: none;
-    }
-
-    .service-slider::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Each Card */
-    .service-card {
-      flex: 0 0 350px;
-      background: #dce6ea;
-      border-radius: 30px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    }
-
-    .service-img {
-      width: 120px;
-      height: auto;
-      border-radius: 10px;
-      margin-right: 20px;
-    }
-
-    .service-info h2 {
-      font-size: 1.4em;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    .service-info p {
-      font-size: 0.95em;
-      color: #444;
-    }
-
-    /* Arrows */
-    .arrow {
-      background-color: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5em;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      transition: background-color 0.3s ease;
-    }
-
-    .arrow:hover {
-      background-color: #4070f4;
-      color: white;
-    }
-
-    .left-arrow {
-      left: 20px;
-    }
-
-    .right-arrow {
-      right: 20px;
-    }
-
-    .slider-container {
-      position: relative;
-    }
-
-    @media (max-width: 768px) {
-      .service-card {
-        flex: 0 0 280px;
-      }
-      .arrow {
-        display: none;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tavelize - Premium Services</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="services_styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
+<body class="bg-gray-50 text-gray-800 text-inter">
 
-<body>
-  <!-- Navbar -->
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Service Section -->
-  <section class="service-section">
-    <h1>Our Services</h1>
-
-    <div class="slider-container">
-      <button class="arrow left-arrow" id="leftArrow">&#10094;</button>
-
-      <div class="service-slider" id="serviceSlider">
-        <div class="service-card">
-          <img src="./../assets/service page assets/car_services.png" alt="Taxi Service" class="service-img" />
-          <div class="service-info">
-            <h2>Taxi Service</h2>
-            <p>
-              Comfortable rides anytime, anywhere. Reliable, safe, and affordable.
-            </p>
-          </div>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#"><img src="../assets/Untitled-2.png"/></a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                    </div>
+                    <div class="nav-search">
+                        <input type="text" placeholder="Search..." class="search-bar" id="searchInput">
+                        <button class="search-btn" id="searchBtn">
+                            <i class='bx bx-search'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <div class="service-card">
-          <img src="./../assets/service page assets/hotel_services.png" alt="Hotel Booking" class="service-img" />
-          <div class="service-info">
-            <h2>Hotel Booking</h2>
-            <p>
-              Book top-rated hotels and enjoy a luxurious stay wherever you travel.
-            </p>
-          </div>
+    <div id="service-content-wrapper" class="pt-32 md:pt-40 max-w-6xl mx-auto px-4 pb-20">
+        
+        <h1 class="text-5xl md:text-6xl text-center brand-font font-extrabold mb-4 text-indigo-700">
+            Premium Travel Services
+        </h1>
+        <p class="text-xl text-center text-gray-500 mb-16">
+            Everything you need for a comfortable and seamless journey, hand-picked by Tavelize experts.
+        </p>
+
+        <div class="space-y-16">
+            
+            <div class="service-card-long" data-service-id="taxi">
+                <div class="service-card-image" style="background-image: url('./../assets/service_page_assets/car_services.png');">
+                    <div class="service-card-overlay"></div>
+                </div>
+                <div class="service-card-content">
+                    <i class="fas fa-car text-3xl text-amber-400 mb-2"></i>
+                    <h2 class="brand-font text-3xl font-bold mb-3">Private Taxi & Transfers</h2>
+                    <p class="text-gray-200 mb-6">
+                        Reliable, licensed, and comfortable transfers for city exploration or inter-city travel. We partner with top-rated local drivers for your safety and convenience.
+                    </p>
+                    <button class="view-details-btn" data-service="taxi">View Licensed Drivers</button>
+                </div>
+            </div>
+
+            <div class="service-card-long reverse" data-service-id="hotels">
+                <div class="service-card-image" style="background-image: url('./../assets/service_page_assets/hotel_services.png');">
+                    <div class="service-card-overlay"></div>
+                </div>
+                <div class="service-card-content">
+                    <i class="fas fa-hotel text-3xl text-amber-400 mb-2"></i>
+                    <h2 class="brand-font text-3xl font-bold mb-3">Premium Hotel Booking</h2>
+                    <p class="text-gray-200 mb-6">
+                        Access to hand-picked hotels, boutique stays, and heritage properties known for their exceptional service and local charm.
+                    </p>
+                    <button class="view-details-btn" data-service="hotels">Find Best Stays</button>
+                </div>
+            </div>
+
+            <div class="service-card-long" data-service-id="spa">
+                <div class="service-card-image" style="background-image: url('./../assets/service_page_assets/spa_services.png');">
+                    <div class="service-card-overlay"></div>
+                </div>
+                <div class="service-card-content">
+                    <i class="fas fa-hand-holding-heart text-3xl text-amber-400 mb-2"></i>
+                    <h2 class="brand-font text-3xl font-bold mb-3">Local Spa & Wellness</h2>
+                    <p class="text-gray-200 mb-6">
+                        Book exclusive wellness packages, traditional Ayurvedic massages, and rejuvenating spa treatments unique to your destination.
+                    </p>
+                    <button class="view-details-btn" data-service="spa">Explore Wellness</button>
+                </div>
+            </div>
+
+            <div class="service-card-long reverse" data-service-id="gym">
+                <div class="service-card-image" style="background-image: url('./../assets/service_page_assets/gym_services.png');">
+                    <div class="service-card-overlay"></div>
+                </div>
+                <div class="service-card-content">
+                    <i class="fas fa-dumbbell text-3xl text-amber-400 mb-2"></i>
+                    <h2 class="brand-font text-3xl font-bold mb-3">Gym & Fitness Access</h2>
+                    <p class="text-gray-200 mb-6">
+                        Maintain your routine while traveling. Get day passes or weekly access to the best fitness centers near your accommodation.
+                    </p>
+                    <button class="view-details-btn" data-service="gym">Find Local Gyms</button>
+                </div>
+            </div>
+            
         </div>
-
-        <div class="service-card">
-          <img src="./../assets/service page assets/spa_services.png" alt="Spa Service" class="service-img" />
-          <div class="service-info">
-            <h2>Spa & Relaxation</h2>
-            <p>
-              Relax with world-class spa treatments and rejuvenate your body and mind.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <img src="./../assets/service page assets/gym_services.png" alt="Fitness" class="service-img" />
-          <div class="service-info">
-            <h2>Fitness & Gym</h2>
-            <p>
-              Modern equipment and expert trainers to keep you in perfect shape.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <button class="arrow right-arrow" id="rightArrow">&#10095;</button>
     </div>
-  </section>
+    
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-service-content">
+                </div>
+        </div>
+    </div>
 
-  <script>
-    const slider = document.getElementById("serviceSlider");
-    const leftArrow = document.getElementById("leftArrow");
-    const rightArrow = document.getElementById("rightArrow");
-
-    rightArrow.addEventListener("click", () => {
-      slider.scrollBy({ left: 400, behavior: "smooth" });
-    });
-
-    leftArrow.addEventListener("click", () => {
-      slider.scrollBy({ left: -400, behavior: "smooth" });
-    });
-  </script>
+    <footer class="bg-gray-800 text-white w-full py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm">&copy; 2025 Tavelize. All rights reserved. | <a href="#" class="hover:text-indigo-400">Privacy Policy</a></p>
+        </div>
+    </footer>
+    <!-- <script src="script.js"></script> -->
+    <script src="services_scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

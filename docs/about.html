@@ -4,39 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Tavelize - Your Journey Partner</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <style>
-        /* Custom styles to enhance the aesthetic */
-        .brand-font {
-            font-family: 'Playfair Display', serif;
-        }
-        .text-inter {
-            font-family: 'Inter', sans-serif;
-        }
-        .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1498036214532-60143890f55b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="about_styles.css">
 </head>
-<body class="bg-white text-gray-800 text-inter">
+<body class="bg-white text-gray-800 text-inter"> 
 
-    <header class="sticky top-0 w-full bg-white bg-opacity-95 shadow-md z-10">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-extrabold brand-font text-indigo-700">Tavelize</a>
-            <nav class="space-x-6 text-lg font-medium hidden md:block">
-                <a href="index.html" class="text-indigo-700 font-bold">About</a>
-                <a href="services.html" class="hover:text-indigo-600">Services</a>
-                <a href="contact.html" class="hover:text-indigo-600">Contact</a>
-            </nav>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#"><img src="../assets/Untitled-2.png"/></a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                    </div>
+                    <div class="nav-search">
+                        <input type="text" placeholder="Search..." class="search-bar" id="searchInput">
+                        <button class="search-btn" id="searchBtn">
+                            <i class='bx bx-search'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero-bg h-[70vh] flex items-center justify-center relative">
+    <section class="hero-bg h-[70vh] flex items-center justify-center relative pt-16" style="margin-top: 150px;">
+        
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div class="text-center relative z-10 p-6 max-w-4xl mx-auto">
             <h1 class="text-6xl md:text-8xl brand-font text-white font-black mb-4 tracking-tight">
@@ -89,31 +104,31 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div class="group transform hover:scale-105 transition duration-300">
-                    <img class="w-full h-64 object-cover object-top rounded-xl shadow-lg mb-4 filter grayscale group-hover:grayscale-0" src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Lead John Doe">
-                    <h4 class="text-xl font-bold brand-font">Arjun Singh</h4>
-                    <p class="text-indigo-600 font-medium">Founder & CEO</p>
-                    <p class="text-sm text-gray-500 mt-2">15+ years of trekking experience. The Visionary.</p>
+                    <img class="w-full h-64 object-cover object-top rounded-xl shadow-lg mb-4 filter grayscale group-hover:grayscale-0" src="./../assets/team/pranav.png" alt="Team Lead Pranav Dwivedi">
+                    <h4 class="text-xl font-bold brand-font">Pranav Dwivedi</h4>
+                    <p class="text-indigo-600 font-medium">Team Leader</p>
+                    <p class="text-sm text-gray-500 mt-2">the provider and directional lead of the website</p>
                 </div>
                 
                 <div class="group transform hover:scale-105 transition duration-300">
-                    <img class="w-full h-64 object-cover object-top rounded-xl shadow-lg mb-4 filter grayscale group-hover:grayscale-0" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member Jane Smith">
-                    <h4 class="text-xl font-bold brand-font">Priya Sharma</h4>
-                    <p class="text-indigo-600 font-medium">Head of Operations</p>
+                    <img class="w-full h-64 object-cover object-top rounded-xl shadow-lg mb-4 filter grayscale group-hover:grayscale-0" src="./../assets/team/vinit.png" alt="Team Member vinit kumar">
+                    <h4 class="text-xl font-bold brand-font">vinit kumar</h4>
+                    <p class="text-indigo-600 font-medium">ui ux designer</p>
                     <p class="text-sm text-gray-500 mt-2">Logistics maestro and customer experience champion.</p>
                 </div>
 
                 <div class="group transform hover:scale-105 transition duration-300">
-                    <img class="w-full h-64 object-cover object-top rounded-xl shadow-lg mb-4 filter grayscale group-hover:grayscale-0" src="https://images.unsplash.com/photo-1542131925-54605175960d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member David Lee">
-                    <h4 class="text-xl font-bold brand-font">David Chen</h4>
-                    <p class="text-indigo-600 font-medium">Technology Lead</p>
+                    <img class="w-full h-64 object-cover object-top rounded-xl shadow-lg mb-4 filter grayscale group-hover:grayscale-0" src="./../assets/team/neha.png" alt="Team Member neha sharma">
+                    <h4 class="text-xl font-bold brand-font">neha sharma</h4>
+                    <p class="text-indigo-600 font-medium">frontend designer</p>
                     <p class="text-sm text-gray-500 mt-2">Ensuring smooth booking and seamless digital journeys.</p>
                 </div>
                 
                 <div class="group transform hover:scale-105 transition duration-300">
-                    <img class="w-full h-64 object-cover object-top rounded-xl shadow-lg mb-4 filter grayscale group-hover:grayscale-0" src="https://images.unsplash.com/photo-1507003211169-0a816d80d888?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member Sarah Green">
-                    <h4 class="text-xl font-bold brand-font">Samir Khan</h4>
-                    <p class="text-indigo-600 font-medium">Local Guide Manager</p>
-                    <p class="text-sm text-gray-500 mt-2">Connecting travelers with the best local experts.</p>
+                    <img class="w-full h-64 object-cover object-top rounded-xl shadow-lg mb-4 filter grayscale group-hover:grayscale-0" src="./../assets/team/ishika.png" alt="Team Member ishika duhan">
+                    <h4 class="text-xl font-bold brand-font">ishika duhan</h4>
+                    <p class="text-indigo-600 font-medium">webpage designer</p>
+                    <p class="text-sm text-gray-500 mt-2">taking this website to you</p>
                 </div>
             </div>
         </div>
@@ -125,7 +140,7 @@
             <p class="text-xl mb-8 opacity-90">
                 Explore our curated collections of trips, or let us customize a journey just for you.
             </p>
-            <a href="#" class="inline-block bg-amber-400 text-indigo-900 text-xl font-extrabold py-3 px-10 rounded-full shadow-2xl uppercase tracking-wider hover:bg-amber-300 transition duration-300 transform hover:-translate-y-1">
+            <a href="index.html" class="inline-block bg-amber-400 text-indigo-900 text-xl font-extrabold py-3 px-10 rounded-full shadow-2xl uppercase tracking-wider hover:bg-amber-300 transition duration-300 transform hover:-translate-y-1">
                 Explore Trips Today <i class="fas fa-arrow-right ml-2 text-lg"></i>
             </a>
         </div>
@@ -136,6 +151,117 @@
             <p class="text-sm">&copy; 2025 Tavelize. All rights reserved. | <a href="#" class="hover:text-indigo-400">Privacy Policy</a></p>
         </div>
     </footer>
+    <script>
+        modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen");
+      
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 5.1 EXISTING INITIAL DARK MODE CHECK ---
+    let getMode = localStorage.getItem("mode");
+    if(getMode && getMode === "dark-mode"){
+        body.classList.add("dark");
+    }
+    
+    const scrollAmount = 310; 
 
+    /**
+     * Reusable function to initialize a single carousel (Card generation + scrolling + modal buttons)
+     */
+    function initializeCarousel(wrapperId, dataArray, scrollLeftBtnId, scrollRightBtnId) {
+        const wrapper = document.getElementById(wrapperId);
+        const scrollLeftBtn = document.getElementById(scrollLeftBtnId);
+        const scrollRightBtn = document.getElementById(scrollRightBtnId);
+
+        if (wrapper) {
+            // 1. Generate Cards
+            let allCardsHTML = '';
+            dataArray.forEach(destination => {
+                allCardsHTML += createTravelCard(destination);
+            });
+            wrapper.innerHTML = allCardsHTML;
+
+            // 2. Add Modal Opener Listeners (using event delegation for efficiency)
+            wrapper.addEventListener('click', (event) => {
+                const button = event.target.closest('.view-itinerary-btn');
+                if (button) {
+                    const destinationId = button.dataset.id;
+                    openItineraryModal(destinationId); 
+                    event.preventDefault(); // Stop any default button action
+                }
+            });
+
+            // 3. Add Scroll Listeners
+            if (scrollLeftBtn && scrollRightBtn) {
+                scrollLeftBtn.addEventListener('click', () => {
+                    wrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                scrollRightBtn.addEventListener('click', () => {
+                    wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+        }
+    }
+
+    // Initialize the two carousels
+    initializeCarousel('travelCardsWrapper', travelDestinations, 'scrollLeft', 'scrollRight');
+    initializeCarousel('moreOptionsWrapper', moreOptions, 'scrollLeftMore', 'scrollRightMore');
+
+
+    // --- 5.2 MODAL CLOSING LISTENERS (ESC Key and click outside) ---
+    
+    if (itineraryModal) {
+        closeBtn.addEventListener('click', closeItineraryModal);
+
+        window.addEventListener('click', (event) => {
+            if (event.target === itineraryModal) {
+                closeItineraryModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && itineraryModal.style.display === 'block') {
+                closeItineraryModal();
+            }
+        });
+    }
+
+    // --- 5.3 EXISTING UI TOGGLE LOGIC ---
+
+    // js code to toggle dark and light mode
+    if (modeToggle) {
+        modeToggle.addEventListener("click" , () =>{
+            modeToggle.classList.toggle("active");
+            body.classList.toggle("dark");
+            if(!body.classList.contains("dark")){
+                localStorage.setItem("mode" , "light-mode");
+            }else{
+                localStorage.setItem("mode" , "dark-mode");
+            }
+        });
+    }
+
+    // js code to toggle search box
+    if (searchToggle) {
+        searchToggle.addEventListener("click" , () =>{
+            searchToggle.classList.toggle("active");
+        });
+    }
+    
+    // js code to toggle sidebar
+    if (sidebarOpen && nav) {
+        sidebarOpen.addEventListener("click" , () =>{
+            nav.classList.add("active");
+        });
+        body.addEventListener("click" , e =>{
+            let clickedElm = e.target;
+            if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+                nav.classList.remove("active");
+            }
+        });
+    }
+});
+    </script>
 </body>
 </html>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Itinerary Cards</title>
     <link rel="stylesheet" href="styles.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -15,7 +14,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
+
     <nav>
         <div class="nav-bar">
             <i class='bx bx-menu sidebarOpen' ></i>
@@ -26,8 +25,8 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
@@ -55,29 +54,29 @@
         </div>
     </nav>
     
-    <div class="travel-cards-section">
-        <h2 class="section-title">Explore Our Destinations</h2>
-        <div class="card-container-wrapper">
-            <div class="cards-wrapper" id="travelCardsWrapper">
-                 </div>
-            <div class="scroll-arrows">
-                <button class="scroll-arrow left" id="scrollLeft" type="button"><i class="fas fa-chevron-left"></i></button>
-                <button class="scroll-arrow right" id="scrollRight" type="button"><i class="fas fa-chevron-right"></i></button>
+<div class="travel-cards-section">
+    <h2 class="section-title">Explore Our Destinations</h2>
+    <div class="card-container-wrapper">
+        <div class="cards-wrapper" id="travelCardsWrapper">
             </div>
+        <div class="scroll-arrows">
+            <button class="scroll-arrow left" id="scrollLeft" type="button"><i class="fas fa-chevron-left"></i></button>
+            <button class="scroll-arrow right" id="scrollRight" type="button"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
+</div>
 
-    <div class="more-options-section">
-        <h2 class="section-title">More Options</h2>
-        <div class="card-container-wrapper">
-            <div class="cards-wrapper" id="moreOptionsWrapper">
-                 </div>
-            <div class="scroll-arrows">
-                <button class="scroll-arrow left" id="scrollLeftMore" type="button"><i class="fas fa-chevron-left"></i></button>
-                <button class="scroll-arrow right" id="scrollRightMore" type="button"><i class="fas fa-chevron-right"></i></button>
+<div class="travel-cards-section more-options-style-mod"> 
+    <h2 class="section-title">International Options</h2>
+    <div class="card-container-wrapper">
+        <div class="cards-wrapper" id="moreOptionsWrapper">
             </div>
+        <div class="scroll-arrows">
+            <button class="scroll-arrow left" id="scrollLeftMore" type="button"><i class="fas fa-chevron-left"></i></button>
+            <button class="scroll-arrow right" id="scrollRightMore" type="button"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
+</div>
 
     <div id="itineraryModal" class="modal">
         <div class="modal-content">
@@ -86,7 +85,6 @@
                 </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
