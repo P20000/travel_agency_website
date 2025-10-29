@@ -305,7 +305,7 @@ body.dark .search-field i{
     position: relative;
     padding: 20px 40px;
     overflow: visible;
-    background-color: rgb(236, 223, 223);
+    background-color: rgb(205 188 255);
     border-radius: 50px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
