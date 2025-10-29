@@ -343,7 +343,7 @@ body.dark .search-field i{
     margin-top: 250px;
     padding: 20px 40px;
     overflow: visible;
-    background-color: rgb(236, 223, 223);
+    background-color: #e8ccff;
     border-radius: 50px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -747,17 +747,18 @@ body.dark .search-field i{
 
 .more-options-section {
   width: 100%;
-  max-width: 1200px;
-  margin-top: 60px;
+  max-width: 1400px;
+  margin-top: 250px;
   margin: 60px auto 0 auto; /* spacing below Travel Destinations */
   text-align: center;
-  background-color: #f5f0ff; /* light purple tint */
+  background-color: #e8ccff; /* light purple tint */
   border-radius: 50px;
-  padding: 20px;
+  padding: 20px 40px;
   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow-x: hidden;
   overflow-y: visible;
+  font-size: 20px;
 }
 
 .more-options-section .section-title {
@@ -810,13 +811,14 @@ body.dark .search-field i{
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
-  color: white;
+  color: rgb(8, 8, 8);
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   z-index: 10;
+  background-color: white;
 }
 
 /* Left and right placement */
