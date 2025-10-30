@@ -1207,3 +1207,81 @@ body, html {
         width: 100%;
     }
 }
+
+
+/* ========================================= */
+/* ===== 4. FLOATING BUTTON (FAB) STYLES ===== */
+/* ========================================= */
+
+.fab-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--nav-color); /* Use purple accent */
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1500; /* Above regular content, below modals */
+}
+
+.fab-btn:hover {
+    background-color: #6a5acd; /* Slightly darker purple on hover */
+    transform: scale(1.05) translateY(-2px);
+}
+
+/* ============================================= */
+/* ===== 5. CUSTOM CREATOR MODAL STYLES ===== */
+/* ============================================= */
+
+/* Adjust modal content for the creator (make it slightly smaller/tighter) */
+.modal-content.creator-content {
+    max-width: 600px; 
+    margin: 10vh auto; /* Position it higher on the screen */
+    padding: 30px;
+    display: block; /* Use standard block layout */
+}
+
+.modal-content.creator-content h2 {
+    font-size: 2em;
+    color: var(--nav-color);
+    margin-bottom: 5px;
+}
+
+.modal-content.creator-content p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Form Styling */
+#customItineraryForm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+#customItineraryForm input[type="text"],
+#customItineraryForm input[type="date"],
+#customItineraryForm input[type="number"],
+#customItineraryForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+#customItineraryForm textarea {
+    resize: vertical;
+}

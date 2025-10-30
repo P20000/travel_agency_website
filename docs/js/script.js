@@ -5,12 +5,14 @@ const body = document.querySelector("body"),
       modeToggle = document.querySelector(".dark-light"),
       searchToggle = document.querySelector(".searchToggle"),
       sidebarOpen = document.querySelector(".sidebarOpen");
-
 // NEW MODAL VARIABLES
 const itineraryModal = document.getElementById('itineraryModal'),
       modalContent = document.getElementById('modal-body-content'),
       closeBtn = document.querySelector('.close-btn');
 
+const createItineraryFab = document.getElementById('createItineraryFab'),
+      creatorModal = document.getElementById('creatorModal'),
+      closeCreatorBtn = document.getElementById('closeCreatorBtn');
 // --- 2. DATA DEFINITIONS ---
 
 // Define detailed itinerary data for the modal (Used by both carousels)
@@ -248,6 +250,18 @@ function closeItineraryModal() {
     body.style.overflow = "auto";
 }
 
+/** Opens the CUSTOM creator modal. */
+function openCreatorModal() {
+    creatorModal.style.display = "block";
+    body.style.overflow = "hidden"; // Prevent background scrolling
+}
+
+/** Closes the CUSTOM creator modal. */
+function closeCreatorModal() {
+    creatorModal.style.display = "none";
+    body.style.overflow = "auto";
+}
+
 // --- 5. INITIALIZATION LOGIC ---
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -321,6 +335,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (creatorModal) {
+        // 1. FAB click to open
+        if (createItineraryFab) {
+            createItineraryFab.addEventListener('click', openCreatorModal);
+        }
+        
+        // 2. Close button click
+        closeCreatorBtn.addEventListener('click', closeCreatorModal);
+
+        // 3. Click outside modal to close
+        window.addEventListener('click', (event) => {
+            if (event.target === creatorModal) {
+                closeCreatorModal();
+            }
+        });
+
+        // 4. ESC key to close
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && creatorModal.style.display === 'block') {
+                closeCreatorModal();
+            }
+        });
+
+        // 5. Basic Form Submission Handler (replace with real logic later)
+        document.getElementById('customItineraryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const tripName = document.getElementById('tripName').value;
+            alert(`Drafting itinerary for: ${tripName}. Check console for details.`);
+            console.log("Form Data:", {
+                name: tripName,
+                destination: document.getElementById('destination').value,
+                startDate: document.getElementById('startDate').value,
+                duration: document.getElementById('durationDays').value,
+                notes: document.getElementById('notes').value
+            });
+            closeCreatorModal();
+        });
+    }
     // --- 5.3 EXISTING UI TOGGLE LOGIC ---
 
     // js code to toggle dark and light mode
@@ -335,14 +387,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     // js code to toggle search box
     if (searchToggle) {
         searchToggle.addEventListener("click" , () =>{
             searchToggle.classList.toggle("active");
         });
     }
-    
     // js code to toggle sidebar
     if (sidebarOpen && nav) {
         sidebarOpen.addEventListener("click" , () =>{
