@@ -1,55 +1,51 @@
-name: CI & Staging Deployment
+name: Deploy Website to S3
 
+# 1. Triggers the workflow on pushes to the main branch
 on:
   push:
     branches:
-      - develop
+      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
+# Defines a single job named 'deploy'
 jobs:
-  # Job 1: Continuous Integration (Testing and Linting)
-  ci:
+  deploy:
+    # 2. Configure the environment
     runs-on: ubuntu-latest
+    
+    # 3. Steps involved in the job
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      - name: Setup Node.js (assuming JS for testing)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      # Example CI Step: Check code quality and run tests
-      - name: Run CI Checks
-        run: |
-          echo "Running build/test commands..."
-          # Replace with your actual commands, e.g., 'npm install', 'npm test', 'npm run lint'
-          # For a static site, you might just ensure all files exist or run linting.
-          # Example: npm install
-          # Example: npm run test 
-
-      - name: Store CI Status
-        run: echo "CI_SUCCESS=true" >> $GITHUB_ENV # Set environment variable for the next job
-
-  # Job 2: Deploy to Staging Environment (Depends on CI success)
-  deploy-staging:
-    needs: ci
-    if: success() # Only run if the 'ci' job succeeded
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
+      # Step 1: Checkout the code from the repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # (Optional) Step 2: Build your static assets (e.g., for a React/Vue app)
+      # - name: Install Dependencies
+      #   run: npm install
+      # - name: Build Static Files
+      #   run: npm run build
+      
+      # Step 3: Configure AWS Credentials for the workflow
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
+          # IMPORTANT: These must be set as Secrets in your GitHub repository
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-
-      - name: Deploy to STAGING S3 Bucket
-        # Deploy to a separate S3 bucket designated for staging (e.g., travel-agency-staging-site)
-        run: aws s3 sync ./ s3://travel-agency-staging-site --exclude ".git/*" --delete
-        
-      - name: Invalidate STAGING CloudFront Cache
-        # Use a separate CloudFront ID for staging
-        run: aws cloudfront create-invalidation --distribution-id E3MBQN405XRQ5S --paths "/*"
+          # The AWS region where your S3 bucket is located
+          aws-region: us-east-1 
+          
+      # Step 4: Run the S3 sync command
+      - name: Sync files to S3 Bucket
+        run: |
+          aws s3 sync \
+            # Source: The local directory containing files to sync. Use 'dist/' or 'build/' if you have a build step.
+            ./ \
+            # Destination: Replace YOUR-S3-BUCKET-NAME with your actual bucket name
+            s3://${{ secrets.travel-agency-staging-site }} \
+            # Standard flags for website sync:
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --acl public-read # Makes files publicly readable for static website hosting
