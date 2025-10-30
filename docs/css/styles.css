@@ -91,6 +91,8 @@ body.dark{
     --text-color: #CCC;
     --search-bar: #242526;
 }
+
+
 nav{
     position: fixed;
     top: 0;
@@ -639,6 +641,7 @@ body.dark .search-field i{
 .signup-btn:hover {
     background-color: #e68900;
 }
+
 /*.navbar {
   display: flex;
   align-items: center;
