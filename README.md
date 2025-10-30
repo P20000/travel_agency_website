@@ -1,76 +1,55 @@
+# travel_agency_website (Tavelize)
 
-# travel\_agency\_website
-
-This repository contains the design, development, and documentation for a comprehensive **Online Travel Agency (OTA) website**. This platform is designed to facilitate the search, booking, and management of various travel components, including flights, hotels, tours, and complete travel packages.
-
------
+This repository contains the design, development, and documentation for a comprehensive **Online Travel Agency (OTA) website, Tavelize**. This platform is designed to facilitate the search, booking, and management of various travel components, including flights, hotels, tours, and complete travel packages.
 
 ## 🚀 Project Goal
 
 To build a **user-friendly, secure, and feature-rich** online portal that serves as a one-stop-shop for all traveler needs, ensuring a seamless booking experience and maximizing conversion rates for the travel agency.
 
------
-
 ## ✨ Key Features
 
-The platform will include the following core features to ensure a robust and competitive online experience:
+The platform is being developed with the following feature set:
 
-### 1\. Booking & Transaction Engine
+### 1. Front-end & UI/UX Features (Implemented)
 
-  * **Real-time Search:** Integrated engines for searching **Flights, Hotels, Tours, and Packages**.
-  * **Advanced Filtering:** Comprehensive options to sort results by price, duration, star rating, layovers, departure times, amenities, etc.
-  * **Secure Checkout:** Integration with multiple, secure **Payment Gateways** (e.g., credit cards, digital wallets).
-  * **Transparent Pricing:** Clear breakdown of all costs, including taxes and fees, with a built-in **Currency Converter**.
+* **Global UI Consistency:** Implemented a single, cohesive **Navbar** solution that maintains functionality (toggles, search, dark mode) across all pages (Home, About, Services, Contact).
 
-### 2\. User Experience & Account Management
+* **Highly Interactive Modals:** Designed and integrated dynamic modal popups for displaying detailed information:
 
-  * **Responsive Design:** Fully optimized layout for all devices (desktop, tablet, and mobile).
-  * **User Dashboard:** A personal account area to **view, modify, or cancel** bookings.
-  * **Automated Communication:** Instant email and SMS confirmations, reminders, and updates.
-  * **Downloadable Itineraries:** Quick access to trip details and vouchers in PDF format.
+  * **Itinerary Modal:** Shows day-by-day planner, service roadmap, and pricing for destinations.
 
-### 3\. Content & Trust Building
+  * **Service Catalog Modal:** Features a grid of stylized detail cards (for Taxi, Hotels, Spa, Gym) with clear data points and visually distinct, **colored footers** for a professional dashboard look.
 
-  * **High-Quality Visuals:** Use of captivating images and videos on all destination and listing pages.
-  * **Detailed Destination Pages:** Informative guides and rich content for every listed location and activity.
-  * **Customer Reviews & Ratings:** Prominently display authentic user feedback to build social proof.
-  * **Live Chat Support:** Instant assistance for customer inquiries.
-  * **Personalized Recommendations:** Suggestions based on user history and search behavior.
+* **Dynamic Landing Page:** Features smooth, scrollable **Destination Carousels** with visually engaging cards.
 
------
+* **Sleek Page Designs:** Developed modern, responsive layouts for the **About Us, Services, and Contact** pages, using clean lines and strong visual hierarchy.
 
-## 🛠️ Technology Stack (Suggested)
+### 2. Core Booking & Transaction Engine (Planned)
 
-*(This section will be updated as the development stack is finalized)*
+* **Real-time Search:** Integrated engines for searching **Flights, Hotels, Tours, and Packages**.
 
-  * **Frontend:** React / Vue.js / Angular (or similar modern framework)
-  * **Backend:** Node.js / Python (Django/Flask) / PHP (Laravel)
-  * **Database:** PostgreSQL / MongoDB
-  * **Search Integration:** APIs for GDS (Global Distribution Systems) like Amadeus, Sabre, and direct supplier connections.
+* **Advanced Filtering:** Comprehensive options to sort results by price, duration, star rating, layovers, departure times, amenities, etc.
 
------
+* **Secure Checkout:** Integration with multiple, secure **Payment Gateways** (e.g., credit cards, digital wallets).
+
+* **Transparent Pricing:** Clear breakdown of all costs, including taxes and fees, with a built-in **Currency Converter**.
+
+### 3. User Experience & Account Management (Planned)
+
+* **User Dashboard:** A personal account area to **view, modify, or cancel** bookings.
+
+* **Automated Communication:** Instant email and SMS confirmations, reminders, and updates.
+
+* **Personalized Recommendations:** Suggestions based on user history and search behavior.
+
+## 🛠️ Technology Stack (Current Implementation)
+
+* **Frontend Core:** HTML5, CSS3, Vanilla JavaScript
+
+* **Styling Frameworks:** **Tailwind CSS** (for structural, utility-first styling on secondary pages), Custom CSS (for core layout and theming).
+
+* **UI/UX Libraries:** **Boxicons** and **Font Awesome** (for iconography).
+
+* **Functionality:** DOM Manipulation, `localStorage` (for dark mode persistence).
 
 ## 📂 Project Structure
-
-```
-travel-agency-website/
-├── frontend/       # e.g., React/Vue app
-├── backend/        # e.g., Node.js/Python API
-└── .github/        # This is where your workflows will live
-    └── workflows/  # Folder for all your YAML files
-```
-
------
-
-## 🤝 Contribution
-
-We welcome contributions\! Please review the **CONTRIBUTING.md** file (to be created) for guidelines on submitting pull requests, reporting issues, and coding standards.
-
------
-
-## 📞 Contact
-
-For questions or inquiries about this project, please contact:
-
-  * team memebers : `pranav dwivedi`, `neha sharma`, `vinit kumar`, `ishika duhan` 
-
