@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./docs/css/about_styles.css">
+    <link rel="stylesheet" href="./docs/css/styles.css">
 </head>
 <body class="bg-white text-gray-800 text-inter"> 
 
     <nav>
         <div class="nav-bar">
             <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a href="#"><img src="../assets/Untitled-2.png"/></a></span>
+            <span class="logo navLogo"><a href="index.html"><img src="./../assets/Untitled-2.png"/></a></span>
             <div class="menu">
                 <div class="logo-toggle">
                     <i class='bx bx-x siderbarClose'></i>
@@ -48,8 +49,11 @@
                 </div>
             </div>
         </div>
+        <div class="auth-combined">
+            <div class="login-signup-btn"><a href="" style="text-decoration: none; color: black;">Login</a>   |   <a href="" style="text-decoration: none; color: black;">Sign Up</a></div>
+        </div>
     </nav>
-
+    
     <section class="hero-bg h-[70vh] flex items-center justify-center relative pt-16" style="margin-top: 150px;">
         
         <div class="absolute inset-0 bg-black opacity-40"></div>
@@ -146,122 +150,12 @@
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-white py-10">
+    <footer class="bg-gray-800 text-white w-full py-10 mt-10">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <p class="text-sm">&copy; 2025 Tavelize. All rights reserved. | <a href="#" class="hover:text-indigo-400">Privacy Policy</a></p>
         </div>
     </footer>
-    <script>
-        modeToggle = document.querySelector(".dark-light"),
-      searchToggle = document.querySelector(".searchToggle"),
-      sidebarOpen = document.querySelector(".sidebarOpen");
-      
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 5.1 EXISTING INITIAL DARK MODE CHECK ---
-    let getMode = localStorage.getItem("mode");
-    if(getMode && getMode === "dark-mode"){
-        body.classList.add("dark");
-    }
-    
-    const scrollAmount = 310; 
 
-    /**
-     * Reusable function to initialize a single carousel (Card generation + scrolling + modal buttons)
-     */
-    function initializeCarousel(wrapperId, dataArray, scrollLeftBtnId, scrollRightBtnId) {
-        const wrapper = document.getElementById(wrapperId);
-        const scrollLeftBtn = document.getElementById(scrollLeftBtnId);
-        const scrollRightBtn = document.getElementById(scrollRightBtnId);
-
-        if (wrapper) {
-            // 1. Generate Cards
-            let allCardsHTML = '';
-            dataArray.forEach(destination => {
-                allCardsHTML += createTravelCard(destination);
-            });
-            wrapper.innerHTML = allCardsHTML;
-
-            // 2. Add Modal Opener Listeners (using event delegation for efficiency)
-            wrapper.addEventListener('click', (event) => {
-                const button = event.target.closest('.view-itinerary-btn');
-                if (button) {
-                    const destinationId = button.dataset.id;
-                    openItineraryModal(destinationId); 
-                    event.preventDefault(); // Stop any default button action
-                }
-            });
-
-            // 3. Add Scroll Listeners
-            if (scrollLeftBtn && scrollRightBtn) {
-                scrollLeftBtn.addEventListener('click', () => {
-                    wrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-                scrollRightBtn.addEventListener('click', () => {
-                    wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
-            }
-        }
-    }
-
-    // Initialize the two carousels
-    initializeCarousel('travelCardsWrapper', travelDestinations, 'scrollLeft', 'scrollRight');
-    initializeCarousel('moreOptionsWrapper', moreOptions, 'scrollLeftMore', 'scrollRightMore');
-
-
-    // --- 5.2 MODAL CLOSING LISTENERS (ESC Key and click outside) ---
-    
-    if (itineraryModal) {
-        closeBtn.addEventListener('click', closeItineraryModal);
-
-        window.addEventListener('click', (event) => {
-            if (event.target === itineraryModal) {
-                closeItineraryModal();
-            }
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && itineraryModal.style.display === 'block') {
-                closeItineraryModal();
-            }
-        });
-    }
-
-    // --- 5.3 EXISTING UI TOGGLE LOGIC ---
-
-    // js code to toggle dark and light mode
-    if (modeToggle) {
-        modeToggle.addEventListener("click" , () =>{
-            modeToggle.classList.toggle("active");
-            body.classList.toggle("dark");
-            if(!body.classList.contains("dark")){
-                localStorage.setItem("mode" , "light-mode");
-            }else{
-                localStorage.setItem("mode" , "dark-mode");
-            }
-        });
-    }
-
-    // js code to toggle search box
-    if (searchToggle) {
-        searchToggle.addEventListener("click" , () =>{
-            searchToggle.classList.toggle("active");
-        });
-    }
-    
-    // js code to toggle sidebar
-    if (sidebarOpen && nav) {
-        sidebarOpen.addEventListener("click" , () =>{
-            nav.classList.add("active");
-        });
-        body.addEventListener("click" , e =>{
-            let clickedElm = e.target;
-            if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-                nav.classList.remove("active");
-            }
-        });
-    }
-});
-    </script>
+    <script src="./docs/js/script.js"></script>
 </body>
 </html>
