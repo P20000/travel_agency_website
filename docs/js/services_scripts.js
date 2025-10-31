@@ -4,9 +4,7 @@ const body = document.querySelector("body");
     modeToggle = document.querySelector(".dark-light")
 
 // Modal variables for this specific page
-const serviceModal = document.getElementById('serviceModal'),
-      modalServiceContent = document.getElementById('modal-service-content'),
-      closeBtn = document.querySelector('.close-btn');
+
 
 // --- 2. SERVICE DATA ---
 
