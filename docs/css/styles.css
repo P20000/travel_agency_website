@@ -145,10 +145,6 @@ nav .nav-bar .logo a{
     
 }
 
-nav .nav-bar .logo a img {
-    height: 100px;   /* decrease height */
-    width: auto;    /* maintain aspect ratio */
-}
 
 .menu .logo-toggle{
     display: none;
@@ -694,7 +690,7 @@ nav .nav-bar .logo a{
     justify-content: flex-start;
 }
 nav .nav-bar .logo a img { 
-    height: 100px; 
+    height: 70px; 
     width: auto; 
 }
 .menu .logo-toggle{ 
@@ -780,9 +776,7 @@ body.dark .searchToggle.active ~ .nav-search .search-btn i {
 /* Responsive adjustments */
 @media (max-width: 790px) {
     nav .nav-bar .sidebarOpen{ display: block; }
-    .menu{
-        position: fixed; height: 100%; width: 320px; left: -100%; top: 0; padding: 20px; background-color: var(--side-nav); z-index: 100; transition: all 0.4s ease;
-    }
+    .menu{position: fixed; height: 100%; width: 320px; left: -100%; top: 0; padding: 20px; background-color: var(--side-nav); z-index: 100; transition: all 0.4s ease;}
     nav.active .menu{ left: -0%; }
     nav.active .nav-bar .navLogo a{ opacity: 0; transition: all 0.3s ease; }
     .menu .logo-toggle{ display: block; width: 100%; display: flex; align-items: center; justify-content: space-between; }
